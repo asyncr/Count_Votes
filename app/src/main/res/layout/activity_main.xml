@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/elecciones"
+            android:textAlignment="center"
+            android:textColor="#8D8DAA"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="Elige tu candidato"
+            android:textAlignment="center"
+            android:textColor="#8D8DAA"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <LinearLayout
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnResultados"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+
+            <LinearLayout
+                android:id="@+id/groupA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdAlianza"
+                    android:layout_width="0dp"
+                    android:layout_height="109dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:minHeight="160dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="2dp"
+                        android:weightSum="100">
+
+                        <ImageView
+                            android:id="@+id/imgAlianza"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginVertical="1dp"
+                            android:layout_weight="50"
+                            android:padding="2dp"
+                            android:src="@drawable/alianza" />
+
+                        <TextView
+                            android:id="@+id/tvAlianza"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="Nueva Alianza"
+                            android:textColor="#8D8DAA"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvAlianzaR"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="Votos: 0"
+                            android:textColor="#8D8DAA"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdPan"
+                    android:layout_width="0dp"
+                    android:layout_height="109dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:minHeight="110dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="2dp"
+                        android:weightSum="100">
+
+                        <ImageView
+                            android:id="@+id/imgPan"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginVertical="1dp"
+                            android:layout_weight="50"
+                            android:padding="2dp"
+                            android:src="@drawable/pan" />
+
+                        <TextView
+                            android:id="@+id/tvPan"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="PAN"
+                            android:textColor="#8D8DAA"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/tvPANR"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="Votos: 0"
+                            android:textColor="#8D8DAA"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/groupB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdPrd"
+                    android:layout_width="0dp"
+                    android:layout_height="109dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:minHeight="160dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="2dp"
+                        android:weightSum="100">
+
+                        <ImageView
+                            android:id="@+id/imgPrd"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginVertical="1dp"
+                            android:layout_weight="50"
+                            android:padding="2dp"
+                            android:src="@drawable/prd" />
+
+                        <TextView
+                            android:id="@+id/tvPrd"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="PRD"
+                            android:textColor="#8D8DAA"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:id="@+id/tvPrdR"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="Votos: 0"
+                            android:textColor="#8D8DAA"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdPRI"
+                    android:layout_width="0dp"
+                    android:layout_height="109dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:minHeight="160dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="2dp"
+                        android:weightSum="100">
+
+                        <ImageView
+                            android:id="@+id/imgPRI"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginVertical="1dp"
+                            android:layout_weight="50"
+                            android:padding="2dp"
+                            android:src="@drawable/pri" />
+
+                        <TextView
+                            android:id="@+id/tvPRI"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="PRI"
+                            android:textColor="#8D8DAA"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:id="@+id/tvPRIR"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="Votos: 0"
+                            android:textColor="#8D8DAA"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/groupC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdPT"
+                    android:layout_width="0dp"
+                    android:layout_height="109dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:minHeight="160dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="2dp"
+                        android:weightSum="100">
+
+                        <ImageView
+                            android:id="@+id/imgPT"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginVertical="1dp"
+                            android:layout_weight="50"
+                            android:padding="2dp"
+                            android:src="@drawable/pt" />
+
+                        <TextView
+                            android:id="@+id/tvPT"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="PT"
+                            android:textColor="#8D8DAA"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:id="@+id/tvPTR"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="Votos: 0"
+                            android:textColor="#8D8DAA"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdVerde"
+                    android:layout_width="0dp"
+                    android:layout_height="109dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:minHeight="160dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="4dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="2dp"
+                        android:weightSum="100">
+
+                        <ImageView
+                            android:id="@+id/imgVerde"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_marginVertical="1dp"
+                            android:layout_weight="50"
+                            android:padding="2dp"
+                            android:src="@drawable/verde" />
+
+                        <TextView
+                            android:id="@+id/tvVerde"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="P Verde"
+                            android:textColor="#8D8DAA"
+                            android:textSize="15sp"/>
+                        <TextView
+                            android:id="@+id/tvVerdeR"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="1dp"
+                            android:layout_weight="25"
+                            android:gravity="center|bottom"
+                            android:text="Votos: 0"
+                            android:textColor="#8D8DAA"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnResultados"
+            android:layout_width="150dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="88dp"
+            android:backgroundTint="@color/naranja"
+            android:text="Resultados"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14dp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
